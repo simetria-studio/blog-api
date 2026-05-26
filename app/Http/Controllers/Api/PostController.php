@@ -153,6 +153,8 @@ class PostController extends Controller
             }
         }
 
+        Log::info(['validated' => $validated]);
+
         $post->update($validated);
 
         return new PostResource($post->load(['category', 'user']));
